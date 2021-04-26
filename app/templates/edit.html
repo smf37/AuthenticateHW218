@@ -1,10 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block content %}
+<form action="/edit/{{oscar.id}}" method="post">
+    <div class="row">
+        <div class="col">
+            <label for="fldIndex">Index Number</label>
+            <input id="fldIndex" type="text" class="form-control" placeholder="Index Number" name="fldIndex" value="{{oscar.fldIndex}}">
+        </div>
+        <div class="col">
+            <label for="fldYear">Year</label>
+            <input id="fldYear" type="text" class="form-control" placeholder="Year"
+                   name="fldYear" value="{{oscar.fldYear}}">
+        </div>
+        <div class="col">
+            <label for="fldAge">Age</label>
+            <input id="fldAge" type="text" class="form-control" placeholder="Age" name="fldAge" value="{{oscar.fldAge}}">
+        </div>
+    </div>
 
-</body>
-</html>
+    <div class="row">
+        <div class="col">
+            <label for="fldName">Name</label>
+            <input id="fldName" type="text" class="form-control" placeholder="Name" name="fldName" value="{{oscar.fldName}}">
+        </div>
+        <div class="col">
+            <label for="fldMovie">Movie</label>
+            <input id="fldMovie" type="text" class="form-control" placeholder="Movie" name="fldMovie" value="{{oscar.fldMovie}}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="fldColumn_6">Column_6</label>
+            <input id="fldColumn_6" type="text" class="form-control" placeholder="Column_6"
+                   name="fldColumn_6" value="{{oscar.fldColumn_6}}">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+
+</form>
+{% endblock %}
